@@ -9,6 +9,7 @@ from datetime import datetime as dt
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+import login
 
 
 def send_mail():
@@ -49,17 +50,15 @@ def send_mail():
 """
 测试方法
 """
+class api_demo(object):
+    cookies = login()
 
 
-def test_suerinfo(self):
-    request = requests.post(url='http://dcdh.cqmsyy.com/app/main/login', \
-                            data=({'token': '862dc26eff856f42e24037ae8ac6558d', 'mobile': '13226349780',
-                                   'password': '123456'}))
-    userinfo = request.json()
-    userinfo_state = userinfo['code']
-    print(userinfo_state)
-    assert userinfo_state == 0, '登录成功'
-    sleep(5)
+
+
+
+
+
 
 
 
@@ -86,11 +85,11 @@ if __name__ == '__main__':
 
     # 运行nosetests进行自动化测试并生成测试报告
     print ('Run Nosetests Now...')
-    #os.system('nosetests -v test_doubanSearch_py3.py:test_doubanSearch --with-html --html-file={0}'.format(report_file))
+    os.system('nosetests -v send_mail_demo.py:api_demo --with-html --html-file={0}'.format(report_file))
 
     # 发送测试报告邮件
     print ('Send Test Report Mail Now...')
-    send_mail()
+    #send_mail()
 
 
 
