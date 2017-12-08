@@ -4,17 +4,20 @@ from time import sleep
 import nose
 import requests
 import unittest
+
+from nose import run
+
 import login
 
 
 class test_userinfo(unittest.TestCase):
-    def userinfo(self):
-        print(343641654654)
-        cookies = login.login_fun.login()
-        params = cookies
+    def test1_userinfo(self):
+        login.login()
         url = 'http://dcdh.cqmsyy.com/app/login_in/userinfo'
         r = requests.get(url)
         rs = r.json()
+        print(rs)
+
 
     def test2_suerinfo(self):
         request = requests.post(url='http://dcdh.cqmsyy.com/app/main/login', \
@@ -28,10 +31,7 @@ class test_userinfo(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    suite = unittest.TestSuite()
-    suite.addTest(test_userinfo('userinfo'))
-    suite.addTest(test_userinfo('test2_suerinfo'))
-
+    unittest.main()
 
 
 
