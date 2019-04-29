@@ -81,7 +81,7 @@ if __name__ == '__main__':
     # 发件人地址
     mail_user = '755682146@qq.com'
     # 发件人密码
-    mail_pwd = 'ghzcpjkiwxonbcdc'
+    mail_pwd = '*******'
     # 邮件标题
     mail_subjet = u'NoseTests_测试报告_{0}'.format(dt.now().strftime('%Y%m%d'))
     # 收件人地址list
